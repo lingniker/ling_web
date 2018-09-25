@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+    *{
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+    }
+    .box{
+        width: 100vw;
+        height: 100vh;
+        background: lightcoral;
+        text-align: center;
+        line-height: 100vh;
+        /* display: none; */
+    }
+    .button{
+        position: absolute;
+        display: inline-block;
+        left: 50%;
+        line-height: 30px;
+        bottom: 30px;
+        width: 100px;
+        margin-left: -50px;
+        height: 30px;
+        /* background: lightcoral; */
+        background: lightblue;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+    .box01{
+        width: 100vw;
+        height: 100vh;
+        background: lightcoral;
+        text-align: center;
+        line-height: 100vh;
+    }
+    .agree{
+        width: 240px;
+        height: 30px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin-top: -15px;
+        margin-left: -110px
+    }
+    .button01{
+        display: inline-block;
+        line-height: 30px;
+        width: 100px;
+        height: 30px;
+        margin-right: 10px;
+        background: lightblue;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+    .button02{
+        display: inline-block;
+        left: 50%;
+        line-height: 30px;
+        width: 100px;
+        height: 30px;
+        background: lightblue;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+    </style>
+</head>
+<body>
+    <div class="box">
+        <span class="next" style="color：#fff;font-size:40px;">你好</span>
+        <div class="button">下一步</div>
+    </div>
+    <!-- <div class="box01">
+        <div class="agree"></div>
+        <div class="button01">同意</div>
+        <div class="button02">不同意</div>
+    </div> -->
+</body>
+<script>
+    var arr = ['你好','我不知道该怎么跟你说了','我想对你说','你真的很漂亮','我喜欢你','做我的女朋友']
+    var next = document.getElementsByClassName('next')[0]
+    var btn = document.getElementsByClassName('button')[0]
+    var index = 0
+    btn.onclick = function(){
+        if(index == 5){
+            return
+        }
+        index++
+        next.innerHTML = arr[index]
+    }
+</script>
+</html>

@@ -7,7 +7,7 @@
 {% endblock %}
 {% block container %}
     {% include "./template/navbar.twig" %}
-    <div class="container-fluid row location">
+    <div class="container-fluid row location locationzu-list">
         <div class="col-md-2 left-bar-wrap">
             {% include "./template/left-bar.twig" %}
         </div>
@@ -33,27 +33,27 @@
                                         </div>
                                     </div>
                                     <div class="form-group">
-                                        <input type="text" class="form-control" name="location" placeholder="请输入设备组名称" style="width: 200px;"
-                                               autocomplete="off" value="{{ request.location }}" maxlength="50">
+                                        <input type="text" class="form-control" name="location" placeholder="请输入卡口组名称" style="width: 200px;"
+                                               autocomplete="off" value="{{ request.location }}">
                                     </div>
                                     <input type="submit" class="btn btn-primary" id="search" value="搜索">
                                 </form>
                             </div>
                             <div class="col-md-3 btns">
                                 <span class="pull-right operate">
-                                  <a class="btn btn-primary" id="addLocation">新建设备组</a>
+                                  <a class="btn btn-primary" id="addLocation">新建卡口组</a>
                                 </span>
                             </div>
                         </div>
                         <table class="table table-bordered table-hover">
                             <thead>
                             <tr>
-                                <td width="6%">序号</td>
-                                <td width="14%">创建单位</td>
-                                <td width="14%">设备组名称</td>
-                                <td width="10%">包含设备数量</td>
+                                <td style="width:6%;">序号</td>
+                                <td style="width:14%;">创建单位</td>
+                                <td style="width:14%;">卡口组名称</td>
+                                <td style="width:10%;">包含卡口数量</td>
                                 <td>备注</td>
-                                <td width="10%">操作</td>
+                                <td style="width:12%;">操作</td>
                             </tr>
                             </thead>
                             <tbody id="list">
@@ -79,14 +79,14 @@
                                 {% endfor %}
                             {% else %}
                                 <tr>
-                                    <td colspan="5" class="text-center">未找到符合条件的数据</td>
+                                    <td colspan="6" class="text-center">未找到符合条件的数据</td>
                                 </tr>
                             {% endif %}
                             </tbody>
                         </table>
                         <div class="row bottom">
                             <div class="col-md-4 total">
-                                共<span>{{locations.total}}</span>个设备
+                                共<span>{{locations.total}}</span>个卡口组
                             </div>
                             {% if locations.data|length !=0 %}
                                 {# <div class="row text-center" id="pagination"></div> #}
@@ -101,13 +101,13 @@
             </div>
         </div>
         {# 修改 #}
-        <div class="modal fade draw-select-none" id="editModal" tabindex="-1" role="dialog"  data-backdrop="static">
+        <div class="modal fade" id="editModal" tabindex="-1" role="dialog" data-backdrop="static">
             <div class="modal-dialog modal-lg" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
                                     aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title">新建设备组</h4>
+                        <h4 class="modal-title">新建卡口组</h4>
                     </div>
                     <div class="modal-body row">
                         <div class="col-md-12">
@@ -123,23 +123,23 @@
                                     </div>
                                 </div>
                                 <div class="form-group">
-                                    <label><span style="color: red">*</span>设备组名称</label>
-                                    <input type="text" id="kakounames" class="form-control" name="device_group_name" placeholder="请输入设备组名称"
-                                        autocomplete="off" maxlength="50">
+                                    <label><span style="color: red">*</span>卡口组名称</label>
+                                    <input type="text" id="kakounames" class="form-control" name="device_group_name" placeholder="请输入卡口组名称"
+                                        autocomplete="off">
                                 </div>
                                 <div class="form-group">
                                     <label>备注</label>
                                     <input id="beizhu" type="text" class="form-control" name="note" placeholder=""
-                                        autocomplete="off" maxlength="256">
+                                        autocomplete="off" >
                                 </div>
                                 <input type="hidden" name="method" id="rest" value="">
                             </form>
                         </div>
                         <div class="col-md-12" style="margin-top: 15px;">
                             <div class="operation-left">
-                                <div class="realtime current" data-type="realtime">包含<span>0</span>个设备</div>
+                                <div class="realtime current" data-type="realtime">包含<span>0</span>个卡口</div>
                                 {# <div class="history" data-type="history">历史分析设备（<span>0</span>个）</div>
-                                <div class="face-num">包含<span>0</span>个设备</div> #}
+                                <div class="face-num">包含<span>0</span>个卡口</div> #}
                             </div>
                             <div class="operation-right">
                                 {%include "./template-gb/map-draw-manager.twig" %} 
@@ -161,7 +161,7 @@
     </div>
     {% include "./template-gb/footer.twig" %}
     <script>
-      var searchBranch = 'face-equipment-group', totalPages = {{ totalPages }}
+      var searchBranch = 'locationzu-list', totalPages = {{ totalPages }}
       var staticDataCache = '{{ staticDataCache }}'
       var ajaxURL = {
         orgUrl: '{{ orgUrl | raw }}',
