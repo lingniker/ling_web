@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>love</title>
     <style>
     *{
         margin: 0px;
@@ -73,7 +73,7 @@
 </head>
 <body>
     <div class="box">
-        <span class="next" style="color：#fff;font-size:40px;">你好</span>
+        <span class="next" style="color：#fff;font-size:40px;">徐现彩</span>
         <div class="button">下一步</div>
     </div>
     <!-- <div class="box01">
@@ -83,16 +83,17 @@
     </div> -->
 </body>
 <script>
-    var arr = ['你好','我不知道该怎么跟你说了','我想对你说','你真的很漂亮','我喜欢你','做我的女朋友']
+    var arr = ['徐现彩','我想对你说','你真的很漂亮','我喜欢你','不要做我的女朋友','做我的老婆吧']
     var next = document.getElementsByClassName('next')[0]
     var btn = document.getElementsByClassName('button')[0]
     var index = 0
     btn.onclick = function(){
-        if(index == 5){
-            return
-        }
         index++
         next.innerHTML = arr[index]
+        if(index == 5){
+            btn.style = 'display:none'
+            return
+        }
     }
 </script>
 </html>
