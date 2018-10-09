@@ -1,11 +1,64 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <meta name="renderer" content="webkit">
+    <meta name="viewport" content="width=device-width,initial-scale=1.0,user-scalable=no">
+    <meta name="Keywords" content="lingyuanping xuxiancai 凌远平 徐现彩"> 
+    <meta name="Description" content="lingyuanping xuxiancai 凌远平 徐现彩">
+    <meta name="Author" content="Doving">
+    <meta name="Robots" content= "all">
+    <title>ling Music</title>
+    <link rel='stylesheet' href='/stylesheets/index.css' />
   </head>
   <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
+  	<header>
+  		<h1>ling Music</h1>
+      <ul class="type">
+        <li class="selected" id='add'>Dot</li>
+        <li>Column</li>
+      </ul>
+      <p>Volume <input id="volume" type="range" min="0" max="100" value="60"></p>
+      <!-- <div class="fork">
+        <div class="border">
+          <a target="_blank" href="https://github.com/doving/webAudio">Fork Me On GitHub</a>
+        </div>
+      </div> -->
+  	</header>  	
+    <div class="list" id="list">
+    	<button class="music-add">
+    		music
+    	</button>
+      <input class="upload" type="file" id="upload" />
+    	<ul class="music-list" id="music-list">
+        <% music.forEach(function(name){ %>
+        <li title="<%= name %>"><%= name %></li>
+        <% }) %>
+    	</ul>
+    </div>
+    <div class="canvas" id="canvas">
+    </div>
+    <div class="loading-box" id="loading-box">
+      <ul id="loading">
+        <li class='l'></li>
+        <li class='o'></li>
+        <li class='a'></li>
+        <li class='d'></li>
+        <li class='i'></li>
+      </ul>
+      <div class="play" id="play">PLAY</div>
+    </div>
+    <script type="text/javascript" src='/javascripts/MusicVisualizer.js'></script>
+    <script type="text/javascript" src='/javascripts/index.js'></script>
+    <div style="display: none">
+    <script>
+      var _hmt = _hmt || [];
+      (function() {
+        var hm = document.createElement("script");
+        // hm.src = "//hm.baidu.com/hm.js?93630333ea7779235e516f80f3dbfcda";
+        var s = document.getElementsByTagName("script")[0]; 
+        s.parentNode.insertBefore(hm, s);
+      })();
+      </script>
+    </div>
   </body>
 </html>

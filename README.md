@@ -1,12 +1,9 @@
-# ling_web
-## web for ling
-* The webSite is lingyuanping creat by 2018/1/20 10:48
-* the webSite open source, everyone can join
+webAudio
+========
 
+利用webAudio,canvas,CSS3制作的自适应的音乐可视化应用
+PC端，移动端通用
 
-## the first web file commit
-* commit by lingniker 2018/2/2 9:37
-* this web show all modal
+https://passionate.herokuapp.com
 
-## 下载 express 框架 安装 express-generator 处理器
-* npm install -g express-generator
+欢迎加入前端高级群，探讨交流前端以及nodejs前沿的技术知识，群号：108873184

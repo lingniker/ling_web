@@ -1,10 +1,15 @@
-var express = require('express');
+var express = require("express");
 var router = express.Router();
-
-/* GET home page. */
-router.get('/', function(req, res, next) {
-  res.render('index', { title: 'Express' });
-  res.send();
+var mediaPath = 'public/media';
+router.get('/', function(req, res){
+	var fs = require("fs");
+	fs.readdir(mediaPath, function(err, files){
+		if(err){
+			console.log(err);
+		}else{
+			res.render('index', {title: 'passionate music', music: files});
+		}
+	});
 });
 
 module.exports = router;
