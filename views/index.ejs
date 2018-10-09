@@ -14,20 +14,20 @@
   	<header>
   		<h1>ling Music</h1>
       <ul class="type">
-        <li class="selected" id='add'>Dot</li>
+        <li class="selected">Dot</li>
         <li>Column</li>
       </ul>
       <p>Volume <input id="volume" type="range" min="0" max="100" value="60"></p>
-      <!-- <div class="fork">
+      <div class="fork" id="add" style="visibility:hidden;">
         <div class="border">
           <a target="_blank" href="https://github.com/doving/webAudio">Fork Me On GitHub</a>
         </div>
-      </div> -->
+      </div>
   	</header>  	
     <div class="list" id="list">
-    	<button class="music-add">
+    	<!-- <button class="music-add">
     		music
-    	</button>
+    	</button> -->
       <input class="upload" type="file" id="upload" />
     	<ul class="music-list" id="music-list">
         <% music.forEach(function(name){ %>
